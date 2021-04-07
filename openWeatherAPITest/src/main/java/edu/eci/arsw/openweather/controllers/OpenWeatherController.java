@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = "/clima")
+@RequestMapping(value = "/weather")
 public class OpenWeatherController {
 
     @Autowired
