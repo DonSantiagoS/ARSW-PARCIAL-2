@@ -20,7 +20,7 @@ public interface OpenWeatherServices {
     /**
      * Obtiene los datos del clima de un lugar específico
      *
-     * @param Ciudad Nombre de la ciudad a consultar el clima
+     * @param ciudad Nombre de la ciudad a consultar el clima
      * @return Información del clima en dicha ciudad
      * @throws OpenWeatherException Cuando la ciudad no existe
      */
