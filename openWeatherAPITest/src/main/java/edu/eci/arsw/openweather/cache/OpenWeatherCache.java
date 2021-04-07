@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
  */
 
 public interface OpenWeatherCache {
+
     /**
-     * Obtiene la información del clima de un lugar especifico
-     *
+     * Consulta la infomacion del clima de un lugar
      * @param ciudad El nombre de la ciudad a consultar
      * @return Información del clima en dicha ciudad que se encuentra guardad en el cache
      * @throws OpenWeatherException - Si no existe la informacion del clima en el cache de la ciudad consultada
@@ -42,4 +42,10 @@ public interface OpenWeatherCache {
      */
     void guardarClimaCache(String ciudad, Weather clima) throws OpenWeatherException;
 
+    /**
+     * Limpia el cache eliminando la informacion del clima de la ciudad la cual ya fue consultada hace 5 minutos
+     * @param ciudad El nombre de la ciudad a consultar
+     * @throws OpenWeatherException - Si no existe informacion del clima de la ciudad en el cache
+     */
+    void limpiarCacheCiudad(String ciudad) throws OpenWeatherException;
 }
