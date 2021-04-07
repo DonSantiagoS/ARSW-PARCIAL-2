@@ -26,6 +26,12 @@ import java.time.LocalDateTime;
 @Service
 public class OpenWeatherServicesImpl implements OpenWeatherServices {
 
+    @Autowired
+    private HttpConnection httpConnection;
+
+    @Autowired
+    private OpenWeatherCache openWeatherCache;
+
     public Weather getClimaCiudad(String ciudad) throws OpenWeatherException {
         Weather clima;
         try {

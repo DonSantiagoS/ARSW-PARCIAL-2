@@ -25,6 +25,6 @@ public class OpenWeatherApp {
      * @param args Argumentos para iniciar la aplicación
      */
     public static void main(String[] args) {
-        SpringApplication.run(OpenWeatherMain.class, args);
+        SpringApplication.run(OpenWeatherApp.class, args);
     }
 }

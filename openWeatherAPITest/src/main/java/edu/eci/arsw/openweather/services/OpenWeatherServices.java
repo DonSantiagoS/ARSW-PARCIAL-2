@@ -24,5 +24,5 @@ public interface OpenWeatherServices {
      * @return Información del clima en dicha ciudad
      * @throws OpenWeatherException Cuando la ciudad no existe
      */
-    Weather getWeatherByCityName(String ciudad) throws OpenWeatherException;
+    Weather getClimaCiudad(String ciudad) throws OpenWeatherException;
 }

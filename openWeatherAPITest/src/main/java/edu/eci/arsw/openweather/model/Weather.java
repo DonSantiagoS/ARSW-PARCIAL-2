@@ -48,7 +48,7 @@ public class Weather {
      * @param pressure - Presion atmosferica de la ciudad
      * @param humidity - Humedad de la ciudad
      */
-    public WeatherByCity(String ciudad, String country, double temperature, double thermalSensation, double windSpeed, int pressure, int humidity) {
+    public Weather(String ciudad, String country, double temperature, double thermalSensation, double windSpeed, int pressure, int humidity) {
         this.ciudad = ciudad;
         this.country = country;
         this.temperature = temperature;
