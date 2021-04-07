@@ -26,7 +26,16 @@ public interface HttpConnection {
 
     double DELTA_FROM_KELVIN_TO_CENTIGRADE = 273.15;
 
-    Weather getWeatherByCityName(String ciudad) throws OpenWeatherConnectionException;
+    Weather getClimaCiudad (String ciudad) throws OpenWeatherConnectionException;
+    default String getURL(String cadena) throws OpenWeatherConnectionException {
+        String encodedQuery;
+        try{
+            encodedQuery = URLEncoder.encode(cadena, StandardCharsets.UTF_8.toString());
+        }catch (UnsupportedEncodingException ex) {
+            throw new OpenWeatherConnectionException("Error al leer" + cadena, ex.getCause());
+        }
+        return encodedQuery.replace("+", "%20");
+    }
 
     default double getDoubleOfJsonObject(JSONObject jsonObject, String value, double delta) {
         double returnedValue = jsonObject.getDouble(value) - delta;
