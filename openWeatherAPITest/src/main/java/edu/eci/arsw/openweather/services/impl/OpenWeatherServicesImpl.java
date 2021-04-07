@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 @Service
 public class OpenWeatherServicesImpl implements OpenWeatherServices {
 
-    public Weather getWeather(String ciudad) throws OpenWeatherException {
+    public Weather getClimaCiudad(String ciudad) throws OpenWeatherException {
         Weather clima;
         try {
             if (openWeatherCache.verificarClimaCiudadCache(ciudad)) {
