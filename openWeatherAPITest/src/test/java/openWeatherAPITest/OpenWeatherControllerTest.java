@@ -2,7 +2,7 @@ package openWeatherAPITest;
 
 import com.google.gson.Gson;
 import edu.eci.arsw.openweather.controllers.OpenWeatherController;
-import edu.eci.arsw.openweather.model.WeatherByCity;
+import edu.eci.arsw.openweather.model.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

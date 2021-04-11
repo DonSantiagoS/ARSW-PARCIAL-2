@@ -1,5 +1,23 @@
 # Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio
 
+#Solucion PARCIAL
+
+En el diseño de la arquitectura para la solucion del parcial se realizo una estructura cliente/servidor en la que se usa Java que actua como servidor pero a la vez como cliente porque consume un API externo y se tiene un apiClient.js que actua como cliente del java y a su vez lo consume
+
+
+Para ejecutar el proyecto de manera local en el directorio BUITRAGO-ARSW-T2:
+
++ Compilar con ```mvn package```
+![](images/compila.png)
+![](images/empaquetado.png)
++ Ejecytar el proyecto con ```mvn spring-boot:run```
++ Ejecutar pruebas con ```mvn test```
+
+Para realizar una extension del proyecto seria posible crrando una nueva clase que a su vez implemente las interfaces creadas como lo son la de cache, la de coneccion y la de servicios de esta forma es posible extender con un muy bajo acomplamiento de manera que sea mucho mas facil la extencion del proyecto
+
+HEROKU
+https://desolate-beyond-48661.herokuapp.com/ 
+
 ## Preparación para el Parcial
 
 Con el objetivo de preparar el examen final del segundo tercio, por favor siga las siguientes instrucciones.
