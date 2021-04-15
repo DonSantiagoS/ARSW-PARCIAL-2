@@ -1,17 +1,17 @@
 var apiclient = (function () {
 
-	let url="https://buitrago-arsw-t2.herokuapp.com/weather/";
+    var url = "http://localhost:8080/weather"
+	//let url="https://buitrago-arsw-t2.herokuapp.com/weather/";
+	//let url="localhost:8080/weather/";
 
-    function buscar(ciudad,callback,errorCallback){
-        axios({
-            method: "get",
-            url: url+ciudad,
-        })
-            .then(response => {callback(response.data,ciudad);})
-            .catch(error => {errorCallback("No existe informacion del clima de: "+ciudad);})
-    }
+     var buscar = function (ciudad,callback){
+                    console.log("Put a message here.")
+                    $.getJSON(url+"/"+ciudad,(data)=>{
+                        callback(data);
+                    },null)
+                };
 
-    function initMap(ciudad){
+    var initMap= function (ciudad){
         fetch(url+ciudad)
             .then(function(response){return response.json()})
             .then(app.plotMarkers);

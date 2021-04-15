@@ -1,15 +1,15 @@
 package edu.eci.arsw.openweather.services.impl;
 
-import edu.eci.arsw.openweather.cache.*;
-import edu.eci.arsw.openweather.cache.impl.*;
-import edu.eci.arsw.openweather.connection.*;
-import edu.eci.arsw.openweather.connection.impl.*;
-import edu.eci.arsw.openweather.model.*;
+import edu.eci.arsw.openweather.cache.OpenWeatherCache;
+import edu.eci.arsw.openweather.connection.HttpConnection;
+import edu.eci.arsw.openweather.connection.impl.OpenWeatherConnectionException;
+import edu.eci.arsw.openweather.model.Weather;
 import edu.eci.arsw.openweather.services.OpenWeatherException;
 import edu.eci.arsw.openweather.services.OpenWeatherServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
+
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------------

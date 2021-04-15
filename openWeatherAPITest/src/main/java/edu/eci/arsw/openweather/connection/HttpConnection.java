@@ -27,6 +27,7 @@ public interface HttpConnection {
     double DELTA_FROM_KELVIN_TO_CENTIGRADE = 273.15;
 
     Weather getClimaCiudad (String ciudad) throws OpenWeatherConnectionException;
+
     default String getUrl(String cadena) throws OpenWeatherConnectionException {
         String encodedQuery;
         try{
@@ -53,17 +54,17 @@ public interface HttpConnection {
 
     default Weather getClimaCiudad(JSONObject obj) throws JSONException {
         JSONObject main = obj.getJSONObject("main");
-        JSONObject coordenadas = obj.getJSONObject("coordenadas");
-        String ciudad = getStringOfJsonObject(obj, "ciudad");
-        String pais = getStringOfJsonObject(obj.getJSONObject("sys"), "pais");
-        String imagen = getStringFromJsonArrayElementInJsonObject(0, "clima", obj, "icon");
-        double temperatura = getDoubleOfJsonObject(main, "temperatura", DELTA_FROM_KELVIN_TO_CENTIGRADE);
+        JSONObject coordenadas = obj.getJSONObject("coord");
+        String ciudad = getStringOfJsonObject(obj, "name");
+        String pais = getStringOfJsonObject(obj.getJSONObject("sys"), "country");
+        String imagen = getStringFromJsonArrayElementInJsonObject(0, "weather", obj, "icon");
+        double temperatura = getDoubleOfJsonObject(main, "temp", DELTA_FROM_KELVIN_TO_CENTIGRADE);
         double sensacionTermica = getDoubleOfJsonObject(main, "feels_like", DELTA_FROM_KELVIN_TO_CENTIGRADE);
-        double velocidadViento = getDoubleOfJsonObject(obj.getJSONObject("viento"), "valocidad", 0);
-        double longitud = getDoubleOfJsonObject(coordenadas, "longitud", 0);
-        double latitud = getDoubleOfJsonObject(coordenadas, "latitud", 0);
-        int presion = main.getInt("presion");
-        int humedad = main.getInt("humedad");
+        double velocidadViento = getDoubleOfJsonObject(obj.getJSONObject("wind"), "speed", 0);
+        double longitud = getDoubleOfJsonObject(coordenadas, "lon", 0);
+        double latitud = getDoubleOfJsonObject(coordenadas, "lat", 0);
+        int presion = main.getInt("pressure");
+        int humedad = main.getInt("humidity");
         Weather clima = new Weather(ciudad, pais, temperatura, sensacionTermica, velocidadViento, presion, humedad);
         clima.setImage(imagen);
         clima.setLatitude(latitud);

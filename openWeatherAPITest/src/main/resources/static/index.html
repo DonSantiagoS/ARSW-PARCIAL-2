@@ -45,8 +45,13 @@
 <body class="body" onload="actualTime()">
 <h1>Open Weather Map</h1>
 
-<input id="name" type="text" placeholder="Ciudad a Consultar"/>
-<button onclick="app.buscar($('#name').val())" class="btn btn-primary">Search</button>
+<form action="/action_page.php">
+    <label for="fcity">Ciudad :</label>
+    <input type="text" id="fcity" name="fcity" value="ciudad">
+    <button type="button" class="btn btn-primary" onclick="app.buscar($('#fcity').val())" >Buscar</button>
+</form>
+
+
 <div class="current-container mobile-padding" style="justify-content: start;">
     <div>
         <span id="time" class="orange-text"></span>

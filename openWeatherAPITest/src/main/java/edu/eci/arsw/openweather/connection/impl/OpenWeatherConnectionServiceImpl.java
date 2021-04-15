@@ -45,7 +45,7 @@ public class OpenWeatherConnectionServiceImpl implements HttpConnection {
         JSONObject obj = response.getBody().getObject();
         Weather clima;
         try {
-            clima = getClimaCiudad(obj);
+            clima=getClimaCiudad(obj);
         } catch (JSONException e) {
             throw new OpenWeatherConnectionException("No se encuentra informacion del clima de la ciudad solicitada", e);
         }

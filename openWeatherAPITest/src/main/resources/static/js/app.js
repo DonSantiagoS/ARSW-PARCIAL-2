@@ -16,12 +16,13 @@ var app = (function () {
 	let imageUrl = "https://openweathermap.org/img/wn/";
 
 	function buscar(ciudad){
+        console.log("Put a message here.")
         clearData();
         clearMap();
         if((ciudad==null) || (ciudad=="")){
             alertError("Escribir el nombre de la Ciudad !!");
         }else{
-            apiclient.buscar(ciudad,updateDataAndConnect,alertError);
+            apiclient.buscar(ciudad,updateDataAndConnect);
         }
     }
 
@@ -32,7 +33,7 @@ var app = (function () {
 
     function updateData(data){
         $("#place").text(data.city+", "+data.country);
-        $("#icon").attr("src",imageUrl+data.image+"@2x.png");
+        $("#icon").attr("src",imageUrl+data.image+"/images/lluvia.png");
         $("#temp").text(data.temperature+"°C");
         $("#thermal").text("Feels like "+data.thermalSensation+"°C");
         $("#speed").text("Wind Speed: "+data.windSpeed+" m/s");
